@@ -1,0 +1,36 @@
+Project: GridCollectionView
+Structure:
+1. Extensions folder
+	UICollectionView+Extension - from SwifterSwift (https://github.com/SwifterSwift/SwifterSwift)
+2. Models folder
+	Has one model file - GridItem in order to store item's width, height, difference between gesture points on x-axis and y-axis
+3. Components folder
+  3.1 BaseViewController
+	Stores the cancellables set
+  3.2 GridViewController folder
+   	3.2.1. GridViewController
+		Has collectionView outlet
+		Has a GridViewModel reference
+		setupUI() - used to configure all objects in this view controller
+		configureCollectionView() - used to configure the grid collectionView  (registers the cell and a pinch gesture recognizer is attached)
+		handlePinch() - used to handle the user's pinch gesture
+		getSourceCellAndIndexPath() - used to return the cell and it's indexPath where the gesture is performing
+                 getGesturePoints() - used to return the 2 points needed for the gesture
+		viewDidLayoutSubviews() - used in order to get the collectionView's width and to store it in viewModel
+		The GridViewController's extension implements the methods described in UICollectionViewDelegate, UICollectionViewDataSource and UICollectionViewDelegateFlowLayout
+	3.2.2. GridViewModel
+		Cell properties: initialCellWidth, initialCellHeight, numberOfColumns, minCellWidth, minCellHeight
+		items - array used to store all grid items
+		itemWidths - array used to store widths for every column
+		retrieveAxisPointsDifference() - calculate difference between points for both x-axis and y-axis
+		refreshItemWidths() - calculate widths for elements
+		refreshCollectionView() - refresh the collectionView items with newWidth, newHeight
+	3.2.3. Views
+		GridCollectionViewCell
+			A collection view cell with a label inside and a configure method
+		GridCollectionView.xib
+			Describes the UI for this specific cell
+4. GridViewModelTests
+	Methods from GridViewModel are tested
+  
+	
