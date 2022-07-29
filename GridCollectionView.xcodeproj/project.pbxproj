@@ -160,9 +160,9 @@
 		E5C762592893346D00CE3D74 /* GridViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E5C7625C2893354B00CE3D74 /* Views */,
 				E5C762612893366500CE3D74 /* BaseViewController.swift */,
 				E5C762632893368F00CE3D74 /* GridViewModel.swift */,
-				E5C7625C2893354B00CE3D74 /* Views */,
 				E5C7625A2893347E00CE3D74 /* GridViewController.swift */,
 			);
 			path = GridViewController;
